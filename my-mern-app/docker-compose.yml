@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  client:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - client-data:/usr/src/app
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - server
+
+  server:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - server-data:/usr/src/app
+    ports:
+      - 5000:5000
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - 27017:27017
+
+volumes:
+  client-data:
+  server-data:
+  mongo-data:
