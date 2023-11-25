@@ -3,6 +3,5 @@
   "dockerComposeFile": "../docker-compose.yml",
   "service": "client",
   "workspaceFolder": "/workspace",
-  "forwardPorts": [3000, 5000],
-  "extensions": ["dbaeumer.vscode-eslint"]
+  "forwardPorts": [3000, 5000]
 }

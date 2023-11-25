@@ -33,7 +33,7 @@ The React application will be available at `http://localhost:3000` and the Expre
 2. Run the following command to stop and remove the containers:
 
 ```bash
-docker-compose down
+
 ```
 
 ## How to Run the Tests
